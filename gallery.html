@@ -1,0 +1,24 @@
+{% extends "home.html" %}
+
+{% block title %}<title>Gallery</title>{% endblock title %}
+{% block heading %}{% endblock heading %}
+
+<style>
+
+img {
+  width: 500px;   
+  height: 500px;
+}
+
+</style>
+
+<body>
+{% block content %}
+<ul>
+    {% for image in image_list %}
+      <img style="width: 500px; height: 500px; border-radius: 8px; display: block;" class="mx-auto d-block" src="{{image.img.url}}" alt="{{ image.title}}">
+      <br>
+    {% endfor %}
+</ul>
+{% endblock content %}
+</body>
